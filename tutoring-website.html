@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tutoring - Learn at Your Own Pace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #4a7c9e;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .contact-info {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ MaxMind Tutoring ✨</h1>
+            <p>Learn at your own pace, in a relaxed environment</p>
+        </header>
+
+        <div class="content">
+            <div class="section">
+                <h2>Hey there! 👋</h2>
+                <p>My name's Mukt, and welcome to a different kind of tutoring experience. No stress, no pressure—just learning that actually makes sense. Whether you're struggling with a tough concept or just want to level up your skills, I'm here to help you get there.</p>
+                <p>I believe learning should feel natural, not forced. We'll work together at a pace that works for you, focusing on what you actually need to succeed.</p>
+            </div>
+
+            <div class="section">
+                <h2>What I Offer</h2>
+                <div class="services">
+                    <div class="service-card">
+                        <h3>📐 Math</h3>
+                        <p>From algebra to calculus, let's make math click. Clear explanations and problem-solving strategies that actually make sense.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🇫🇷 French</h3>
+                        <p>Master French with confidence. Grammar, vocabulary, conversation, and exam prep—all in a supportive environment.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>📖 English</h3>
+                        <p>Improve your writing, reading comprehension, and essay skills. We'll work on everything from grammar to literary analysis.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🎯 Test Prep</h3>
+                        <p>Get ready for exams without the anxiety. We'll build your confidence and develop strategies that actually work for you.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>✍️ Homework Help</h3>
+                        <p>Stuck on an assignment? Let's work through it together. You'll understand the material, not just get answers.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🌱 Study Skills</h3>
+                        <p>Learn how to learn. I'll help you develop effective study habits and techniques that last a lifetime.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🎓 Currently Pursuing High School Diploma</h3>
+                        <p>I'm currently working toward my high school diploma, so I understand the challenges you're facing firsthand.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>📈 Achieving High 90s Consistently</h3>
+                        <p>I maintain grades in the high 90s across my subjects, and I'm here to share the strategies that work for me.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>How It Works</h2>
+                <p>Sessions are flexible and tailored to you. We can meet online or in person, work on specific problems, or dive deep into concepts you want to master. It's all about what helps you learn best.</p>
+                <p>Each session is relaxed and focused—think of it as hanging out with a knowledgeable friend who genuinely wants to see you succeed.</p>
+            </div>
+
+            <div class="section">
+                <h2>Let's Connect</h2>
+                <p>Ready to get started? Reach out and let's chat about what you're working on and how I can help.</p>
+                <div class="contact-info">
+                    <p><strong>📧 Email:</strong> maxmindtutoring@gmail.com</p>
+                    <p><strong>📱 Phone:</strong> (437) 427-4083</p>
+                    <p><strong>⏰ Availability:</strong> Flexible scheduling, including evenings and weekends</p>
+                </div>
+                <a href="mailto:maxmindtutoring@gmail.com" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 MaxMind Tutoring</p>
+        </footer>
+    </div>
+</body>
+</html>
