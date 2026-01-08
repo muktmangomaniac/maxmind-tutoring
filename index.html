@@ -29,8 +29,26 @@
 
         header {
             text-align: center;
-            padding: 60px 20px;
+            padding: 60px 20px 30px;
             color: white;
+        }
+
+        .nav-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: background 0.3s ease, transform 0.3s ease;
+            margin: 20px 10px 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
 
         header h1 {
@@ -158,6 +176,9 @@
         <header>
             <h1>✨ MaxMind Tutoring ✨</h1>
             <p>Learn at your own pace, in a relaxed environment</p>
+            <div>
+                <a href="parents.html" class="nav-button">📋 Parent Information</a>
+            </div>
         </header>
 
         <div class="content">
