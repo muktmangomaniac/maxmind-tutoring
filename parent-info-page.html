@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Parents - MaxMind Tutoring</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #4a7c9e;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .calendar-container {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .calendar-header {
+            font-weight: 600;
+            text-align: center;
+            padding: 10px;
+            background: #667eea;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border: 2px solid #e2e8f0;
+        }
+
+        .calendar-day.available {
+            background: #c6f6d5;
+            border-color: #48bb78;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .calendar-day.available:hover {
+            transform: scale(1.05);
+        }
+
+        .availability-note {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff5cc;
+            border-left: 4px solid #ecc94b;
+            border-radius: 5px;
+        }
+
+        .group-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .group-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .group-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .group-card h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .group-card p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1em;
+        }
+
+        .tutor-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .tutor-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tutor-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tutor-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            color: white;
+        }
+
+        .tutor-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+
+        .tutor-focus {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px;
+        }
+
+        .info-box {
+            background: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .info-box h3 {
+            color: #234e52;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
+                gap: 5px;
+            }
+
+            .calendar-day {
+                padding: 8px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 MaxMind Tutoring</h1>
+            <p>Information for Parents</p>
+        </header>
+
+        <nav>
+            <a href="index.html">← Back to Home</a>
+        </nav>
+
+        <div class="content">
+            <div class="section">
+                <h2>📅 Tutor Availability Calendar</h2>
+                <p>Check out our available tutoring sessions for this week. Green dates indicate available time slots. Click to inquire about booking!</p>
+                
+                <div class="calendar-container">
+                    <h3 style="text-align: center; margin-bottom: 15px;">January 2026</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-header">Mon</div>
+                        <div class="calendar-header">Tue</div>
+                        <div class="calendar-header">Wed</div>
+                        <div class="calendar-header">Thu</div>
+                        <div class="calendar-header">Fri</div>
+                        <div class="calendar-header">Sat</div>
+                        <div class="calendar-header">Sun</div>
+                        
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day"></div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day available">3</div>
+                        <div class="calendar-day available">4</div>
+                        
+                        <div class="calendar-day">5</div>
+                        <div class="calendar-day available">6</div>
+                        <div class="calendar-day available">7</div>
+                        <div class="calendar-day">8</div>
+                        <div class="calendar-day available">9</div>
+                        <div class="calendar-day available">10</div>
+                        <div class="calendar-day available">11</div>
+                        
+                        <div class="calendar-day available">12</div>
+                        <div class="calendar-day available">13</div>
+                        <div class="calendar-day available">14</div>
+                        <div class="calendar-day available">15</div>
+                        <div class="calendar-day available">16</div>
+                        <div class="calendar-day available">17</div>
+                        <div class="calendar-day available">18</div>
+                    </div>
+                    
+                    <div class="availability-note">
+                        <strong>📌 Note:</strong> Sessions are typically available weekday evenings (4-8 PM) and weekends (10 AM - 6 PM). Contact us to book your preferred time slot!
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Student-Based Learning Approach</h2>
+                <p>At MaxMind Tutoring, we believe every student learns differently. Our approach is completely student-centered, meaning we adapt our teaching methods to match your child's unique learning style, pace, and goals.</p>
+                <p>We focus on building confidence, understanding concepts deeply rather than memorizing, and developing skills that will help students succeed independently.</p>
+            </div>
+
+            <div class="section">
+                <h2>👥 Student Groups by Grade Level</h2>
+                <p>We organize our tutoring into grade-level groups to ensure age-appropriate instruction and peer learning opportunities:</p>
+                
+                <div class="group-cards">
+                    <div class="group-card">
+                        <h3>🌱 Grades 1-3</h3>
+                        <p>Building strong foundations in reading, writing, and basic math. Focus on developing good study habits early and making learning fun and engaging.</p>
+                    </div>
+                    
+                    <div class="group-card">
+                        <h3>🌿 Grades 4-6</h3>
+                        <p>Expanding knowledge across subjects with emphasis on critical thinking, problem-solving, and independence. Preparing for the transition to middle school.</p>
+                    </div>
+                    
+                    <div class="group-card">
+                        <h3>🌳 Grades 7-8</h3>
+                        <p>Advanced subject matter, test preparation, and study skills. Special focus on high school readiness and academic confidence during these crucial years.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎓 Special Mentorship for Grade 8 Students</h2>
+                <div class="info-box">
+                    <h3>Preparing for High School Success</h3>
+                    <p>Grade 8 is a pivotal year! We offer specialized mentorship programs for Grade 8 students to help them transition smoothly into high school. This includes:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>High school course selection guidance</li>
+                        <li>Advanced study techniques for high school-level work</li>
+                        <li>Time management and organization skills</li>
+                        <li>Building academic confidence for the next chapter</li>
+                        <li>Support with high school entrance exams if applicable</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>👨‍🏫 Meet Our Tutors</h2>
+                <p>Our tutors are passionate, knowledgeable students who excel in their subjects and love helping others succeed.</p>
+                
+                <div class="tutor-profiles">
+                    <div class="tutor-card">
+                        <div class="tutor-avatar">M</div>
+                        <h3>Mukt</h3>
+                        <p style="color: #4a5568; margin-bottom: 15px;">Founder & Lead Tutor</p>
+                        <div class="tutor-focus">Math</div>
+                        <div class="tutor-focus">English</div>
+                        <div class="tutor-focus">French</div>
+                        <p style="margin-top: 15px; font-size: 0.95em;">Currently pursuing high school diploma with consistent high 90s. Specializes in making complex concepts easy to understand.</p>
+                    </div>
+                    
+                    <div class="tutor-card">
+                        <div class="tutor-avatar">?</div>
+                        <h3>Your Tutor Here</h3>
+                        <p style="color: #4a5568; margin-bottom: 15px;">Subject Specialist</p>
+                        <div class="tutor-focus">Science</div>
+                        <div class="tutor-focus">Biology</div>
+                        <p style="margin-top: 15px; font-size: 0.95em;">Join our team! We're always looking for dedicated tutors passionate about helping students succeed.</p>
+                    </div>
+                    
+                    <div class="tutor-card">
+                        <div class="tutor-avatar">?</div>
+                        <h3>Your Tutor Here</h3>
+                        <p style="color: #4a5568; margin-bottom: 15px;">Subject Specialist</p>
+                        <div class="tutor-focus">Languages</div>
+                        <div class="tutor-focus">French</div>
+                        <p style="margin-top: 15px; font-size: 0.95em;">Interested in tutoring? Reach out to us and become part of the MaxMind family!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📞 Ready to Get Started?</h2>
+                <p>Contact us today to discuss your child's needs and schedule a session!</p>
+                <div style="background: #f7fafc; padding: 25px; border-radius: 15px; margin-top: 20px;">
+                    <p style="margin: 10px 0;"><strong>📧 Email:</strong> maxmindtutoring@gmail.com</p>
+                    <p style="margin: 10px 0;"><strong>📱 Phone:</strong> (437) 427-4083</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 MaxMind Tutoring</p>
+        </footer>
+    </div>
+</body>
+</html>
