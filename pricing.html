@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - MaxMind Tutoring</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-image: url('background.jpg'), linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            background-position: center;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .intro-box {
+            background: #fff5cc;
+            border-left: 4px solid #ecc94b;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .intro-box p {
+            color: #2d3748;
+            margin: 10px 0;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .pricing-card .focus {
+            color: #4a5568;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .pricing-card .pricing-section {
+            margin: 20px 0;
+        }
+
+        .pricing-section h4 {
+            color: #2d3748;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .pricing-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .pricing-section li {
+            padding: 8px 0;
+            color: #4a5568;
+            font-size: 1.05em;
+        }
+
+        .included-section {
+            background: #e6fffa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .included-section p {
+            margin: 5px 0;
+            color: #234e52;
+            font-size: 1em;
+        }
+
+        .best-for {
+            color: #667eea;
+            font-weight: 500;
+            margin-top: 15px;
+            font-size: 1.05em;
+        }
+
+        .package-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .package-box h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .package-box p {
+            color: rgba(255, 255, 255, 0.95);
+            margin: 10px 0;
+        }
+
+        .package-box ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+        }
+
+        .package-box li {
+            padding: 8px 0;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.1em;
+        }
+
+        .cta-box {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .cta-box h3 {
+            color: #2d3748;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px auto;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ MaxMind Tutoring ✨</h1>
+            <p>Transparent, Fair Pricing</p>
+        </header>
+
+        <nav>
+            <a href="index.html">← Home</a>
+            <a href="parents.html">Parent Information</a>
+        </nav>
+
+        <div class="content">
+            <div class="section">
+                <h2>💰 Pricing</h2>
+                <div class="intro-box">
+                    <p>At MaxMind Tutoring, we believe every student learns differently. Our rates are structured by grade level to reflect the level of support, subject complexity, and preparation required.</p>
+                    <p><strong>📌 All students receive a free consultation before starting.</strong></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="pricing-card">
+                    <h3>🌱 Grades 1–3 (Early Elementary)</h3>
+                    <p class="focus"><strong>Focus:</strong> Foundational skills, confidence building, reading, writing, basic math, and homework support.</p>
+                    
+                    <div class="pricing-section">
+                        <h4>Pricing:</h4>
+                        <ul>
+                            <li>• <strong>1-on-1 Tutoring:</strong> $25/hour</li>
+                            <li>• <strong>Homework Help & Study Support:</strong> $25/hour</li>
+                        </ul>
+                    </div>
+
+                    <div class="included-section">
+                        <p><strong>What's included:</strong></p>
+                        <p>✔ Patient, step-by-step instruction</p>
+                        <p>✔ Age-appropriate learning strategies</p>
+                        <p>✔ Encouraging and supportive environment</p>
+                    </div>
+
+                    <p class="best-for">Best for students who need help building strong learning habits early.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>📘 Grades 4–6 (Upper Elementary)</h3>
+                    <p class="focus"><strong>Focus:</strong> Math problem-solving, reading comprehension, writing structure, French/English skills, and test preparation.</p>
+                    
+                    <div class="pricing-section">
+                        <h4>Pricing:</h4>
+                        <ul>
+                            <li>• <strong>1-on-1 Tutoring:</strong> $30/hour</li>
+                            <li>• <strong>Homework Help & Study Skills:</strong> $25–30/hour</li>
+                            <li>• <strong>Test & Exam Preparation:</strong> $30/hour</li>
+                        </ul>
+                    </div>
+
+                    <div class="included-section">
+                        <p><strong>What's included:</strong></p>
+                        <p>✔ Subject-focused instruction</p>
+                        <p>✔ Study and organization skills</p>
+                        <p>✔ Preparation for increasing academic expectations</p>
+                    </div>
+
+                    <p class="best-for">Ideal for students transitioning to more independent learning.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>🎓 Grades 7–8 (Middle School)</h3>
+                    <p class="focus"><strong>Focus:</strong> Advanced math concepts, essay writing, grammar, French/English fluency, exam prep, and high school readiness.</p>
+                    
+                    <div class="pricing-section">
+                        <h4>Pricing:</h4>
+                        <ul>
+                            <li>• <strong>1-on-1 Tutoring:</strong> $30–35/hour</li>
+                            <li>• <strong>Homework Help:</strong> $30/hour</li>
+                            <li>• <strong>Test & Exam Preparation:</strong> $35/hour</li>
+                        </ul>
+                    </div>
+
+                    <div class="included-section">
+                        <p><strong>What's included:</strong></p>
+                        <p>✔ Deeper concept explanations</p>
+                        <p>✔ Exam strategies and practice</p>
+                        <p>✔ Skills needed for high school success</p>
+                    </div>
+
+                    <p class="best-for">Designed for students preparing for higher academic demands.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="package-box">
+                    <h3>📦 Package Discounts</h3>
+                    <p>Save more with prepaid packages:</p>
+                    <ul>
+                        <li>• <strong>5 sessions:</strong> $140</li>
+                        <li>• <strong>10 sessions:</strong> $270</li>
+                    </ul>
+                    <p style="font-size: 0.95em; margin-top: 15px;">(Packages can be used across subjects and grade levels.)</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="cta-box">
+                    <h3>📞 Free Consultation</h3>
+                    <p>Not sure what level of support your child needs? We offer a free 15–20 minute consultation to discuss goals, learning style, and the best tutoring plan.</p>
+                    <p><strong>📧 Email:</strong> maxmindtutoring@gmail.com</p>
+                    <p><strong>📱 Phone:</strong> (437) 427-4083</p>
+                    <a href="mailto:maxmindtutoring@gmail.com" class="cta-button">Contact Us to Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 MaxMind Tutoring</p>
+        </footer>
+    </div>
+</body>
+</html>
