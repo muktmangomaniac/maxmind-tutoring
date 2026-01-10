@@ -326,6 +326,48 @@
                 font-size: 0.9em;
                 padding: 12px;
             }
+            footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px 20px;
+            margin-top: 50px;
+            border-top: 2px solid #667eea;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            color: #667eea;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: #4a5568;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+        
+        .footer-section a:hover {
+            color: #667eea;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #4a5568;
+            font-size: 0.9em;
         }
     </style>
 </head>
@@ -508,7 +550,36 @@
         </div>
 
         <footer>
-            <p>© 2026 MaxMind Tutoring</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MaxMind Tutoring</h3>
+                    <p>Personalized tutoring for students in grades 1-8. Building confidence and academic success, one session at a time.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="parents.html">For Parents</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>maxmindtutoring@gmail.com</p>
+                    <p>Vaughan, Ontario, CA</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Availability</h3>
+                    <p>Weekday evenings: 4-8 PM</p>
+                    <p>Weekends: 10 AM - 4 PM</p>
+                    <p>Flexible scheduling available</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 MaxMind Tutoring. All rights reserved.</p>
+            </div>
         </footer>
     </div>
 </body>
