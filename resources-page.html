@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - MaxMind Tutoring</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #34495e;
+            min-height: 100vh;
+        }
+
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .main-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .main-nav .logo {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-nav ul li {
+            display: inline;
+        }
+
+        .main-nav ul li a {
+            color: #2d3748;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .main-nav ul li a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .main-nav ul li a.active {
+            background: #667eea;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .main-nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        
+            .main-nav ul li a {
+                padding: 6px 12px;
+                font-size: 0.9em;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.3em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+
+        .info-note {
+            background: #fff5cc;
+            border-left: 4px solid #ecc94b;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .info-note p {
+            color: #2d3748;
+            margin: 10px 0;
+        }
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .resource-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .resource-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .resource-card .grade-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-info {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: black;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .resources {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="main-nav">
+            <div class="container">
+                <a href="index.html" class="logo">MaxMind Tutoring</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="parents.html">For Parents</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="mailto:maxmindtutoring@gmail.com">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <header>
+            <h1>📚 Learning Resources</h1>
+            <p>Free study materials and helpful guides</p>
+        </header>
+
+        <div class="content">
+            <div class="section">
+                <div class="info-note">
+                    <p><strong>📌 Note:</strong> These resources are free for all students. Download and use them to support your learning. New materials are added regularly!</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📐 Math Resources</h2>
+                <div class="resources">
+                    <div class="resource-card">
+                        <h3>📝 Multiplication Practice</h3>
+                        <span class="grade-tag">Grades 3-5</span>
+                        <p>Practice worksheets for mastering multiplication tables with answer keys included.</p>
+                        <a href="resources/multiplication-practice.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>🧮 Fractions Guide</h3>
+                        <span class="grade-tag">Grades 4-6</span>
+                        <p>Step-by-step guide to understanding fractions, decimals, and percentages.</p>
+                        <a href="resources/fractions-guide.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>📊 Algebra Basics</h3>
+                        <span class="grade-tag">Grades 7-8</span>
+                        <p>Introduction to algebra concepts with practice problems and solutions.</p>
+                        <a href="resources/algebra-basics.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>📖 English Resources</h2>
+                <div class="resources">
+                    <div class="resource-card">
+                        <h3>✍️ Essay Writing Template</h3>
+                        <span class="grade-tag">Grades 6-8</span>
+                        <p>Structured templates for writing strong essays with examples.</p>
+                        <a href="resources/essay-template.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>📚 Reading Comprehension Tips</h3>
+                        <span class="grade-tag">Grades 4-7</span>
+                        <p>Strategies to improve reading comprehension and retention.</p>
+                        <a href="resources/reading-tips.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>🔤 Grammar Guide</h3>
+                        <span class="grade-tag">All Grades</span>
+                        <p>Common grammar rules, punctuation, and examples.</p>
+                        <a href="resources/grammar-guide.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🇫🇷 French Resources</h2>
+                <div class="resources">
+                    <div class="resource-card">
+                        <h3>🗣️ Common French Phrases</h3>
+                        <span class="grade-tag">Grades 4-8</span>
+                        <p>Essential French phrases for everyday conversation.</p>
+                        <a href="resources/french-phrases.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>📝 Verb Conjugation Chart</h3>
+                        <span class="grade-tag">Grades 6-8</span>
+                        <p>Common French verb conjugations and practice exercises.</p>
+                        <a href="resources/french-verbs.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🎯 Study Skills & Tips</h2>
+                <div class="resources">
+                    <div class="resource-card">
+                        <h3>📅 Study Planner Template</h3>
+                        <span class="grade-tag">All Grades</span>
+                        <p>Organize your study schedule and track your progress.</p>
+                        <a href="resources/study-planner.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>🧠 Test Preparation Checklist</h3>
+                        <span class="grade-tag">Grades 5-8</span>
+                        <p>Step-by-step guide to preparing effectively for tests.</p>
+                        <a href="resources/test-prep.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+
+                    <div class="resource-card">
+                        <h3>💡 Homework Tips</h3>
+                        <span class="grade-tag">All Grades</span>
+                        <p>Strategies to complete homework efficiently and effectively.</p>
+                        <a href="resources/homework-tips.pdf" class="download-btn" download>Download PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Need More Help?</h2>
+                <p>These resources are a great starting point, but personalized tutoring can make all the difference.</p>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> maxmindtutoring@gmail.com</p>
+                </div>
+                <a href="mailto:maxmindtutoring@gmail.com" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 MaxMind Tutoring</p>
+        </footer>
+    </div>
+</body>
+</html>
